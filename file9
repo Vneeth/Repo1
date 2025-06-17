@@ -1,0 +1,22 @@
+import java.util.HashMap;
+ 
+public class FinalCountWords {
+ 
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        String str = &amp;quot;This this is is done by Saket Saket&amp;quot;;
+        String[] split = str.split(&amp;quot; &amp;quot;);
+ 
+                HashMap&amp;lt;String,Integer&amp;gt; map = new HashMap&amp;lt;String,Integer&amp;gt;();
+        for (int i=0; i&amp;lt;split.length; i++) {
+            if (map.containsKey(split[i])) {
+                int count = map.get(split[i]);
+                map.put(split[i], count+1);
+            }
+            else {
+                map.put(split[i], 1);
+            }
+        }
+        System.out.println(map);
+    }
+ 
